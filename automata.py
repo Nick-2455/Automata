@@ -1,56 +1,60 @@
+# Falta que detecte 6.1E-8 y -8.6
+# Para correrlo YO tengo que hacerlo desde terminal con python3 /Users/nicolasperalta/Documents/TEC/IV\ SEMESTRE/MetodosComputacionales/Automata-1/automata.py
+
+
 import re
 from collections import namedtuple
 
 # Definir los tipos de token
-Token = namedtuple('Token', ['tipo', 'valor'])
+Token = namedtuple('Token', ['type', 'value'])
 
 # Expresión para identificar los tokens
-patrones_token = [
-    (r'//.*', 'COMENTARIO'),
-    (r'\d+\.\d+(?:[eE][+-]?\d+)?', 'REAl'),
-    (r'\d+', 'ENTERO'),
-    (r'[a-zA-Z_][a-zA-Z0-9_]*', 'VARIABLE'),
-    (r'[=]', 'ASIGNACION'),
-    (r'[+]', 'SUMA'),
-    (r'[-]', 'RESTA'),
-    (r'[*]', 'MULTIPLICACION'),
-    (r'[/]', 'DIVISION'),
-    (r'[\^]', 'POTENCIA'),
-    (r'\(', 'PARENTESIS_IZQUIERDO'),
-    (r'\)', 'PARENTESIS_DERECHO'),
-    (r'\s+', None),
+token_patterns = [
+    (r'//.*', 'COMENTARIO'), 
+    (r'[-+]?\d*\.\d+(?:[eE][-+]?\d+)?', 'REAL'), 
+    (r'[-+]?\d+', 'ENTERO'), 
+    (r'[a-zA-Z_][a-zA-Z0-9_]*', 'VARIABLE'),  
+    (r'[=]', 'ASIGNACION'),  
+    (r'[+]', 'SUMA'),  
+    (r'[-]', 'RESTA'),  
+    (r'[*]', 'MULTIPLICACION'),  
+    (r'[/]', 'DIVISION'),  
+    (r'[\^]', 'POTENCIA'),  
+    (r'\(', 'PARENTHESIS QUE ABRE'),  
+    (r'\)', 'PARENTHESIS QUE CIERRA'), 
+    (r'\s+', None),  
 ]
 
 # Función para tokenizar la entrada
-def tokenizar(codigo):
+def tokenize(code):
     tokens = []
-    while codigo:
-        coincidencia = None
-        for patron, tipo_token in patrones_token:
-            regex = re.compile(patron)
-            coincidencia = regex.match(codigo)
-            if coincidencia:
-                valor = coincidencia.group(0)
-                if tipo_token:
-                    tokens.append(Token(tipo_token, valor))
+    while code:
+        match = None
+        for pattern, token_type in token_patterns:
+            regex = re.compile(pattern)
+            match = regex.match(code)
+            if match:
+                value = match.group(0)
+                if token_type:
+                    tokens.append(Token(token_type, value))
                 break
-        if not coincidencia:
-            raise ValueError(f"Token no reconocido: {codigo}")
-        codigo = codigo[len(coincidencia.group(0)):]
+        if not match:
+            raise ValueError(f"Token no reconocido: {code}")
+        code = code[len(match.group(0)):]
     return tokens
 
 # Leer el archivo de texto
-def leer_archivo(ruta_archivo):
-    with open(ruta_archivo, 'r') as archivo:
-        return archivo.read()
+def read_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
 
 # Leer expresiones desde un archivo de texto
-ruta_archivo = 'expresiones.txt'
-codigo_entrada = leer_archivo(ruta_archivo)
+file_path = 'expresiones.txt'  
+input_code = read_file(file_path)
 
-tokens = tokenizar(codigo_entrada)
+tokens = tokenize(input_code)
 
 # Imprimir los tokens encontrados
 print("Tokens encontrados:")
 for token in tokens:
-    print(f"Token: {token.valor}  \t Tipo: {token.tipo}")
+    print(f"Token: {token.value}  Tipo: {token.type}")
