@@ -2,55 +2,55 @@ import re
 from collections import namedtuple
 
 # Definir los tipos de token
-Token = namedtuple('Token', ['type', 'value'])
+Token = namedtuple('Token', ['tipo', 'valor'])
 
-# Expresion para identificar los tokens
-token_patterns = [
-    (r'//.*', 'COMENTARIO'), 
-    (r'\d+\.\d+(?:[eE][+-]?\d+)?', 'Real'),
-    (r'\d+', 'ENTERO'), 
-    (r'[a-zA-Z_][a-zA-Z0-9_]*', 'VARIABLE'),  
-    (r'[=]', 'ASIGNACION'),  
-    (r'[+]', 'SUMA'),  
-    (r'[-]', 'RESTA'),  
-    (r'[*]', 'MULTIPLICACION'),  
-    (r'[/]', 'DIVISION'),  
-    (r'[\^]', 'POTENCIA'),  
-    (r'\(', 'PARENTHESIS_IZQUIERDO'),  
-    (r'\)', 'PARENTHESIS_DERECHO'), 
-    (r'\s+', None),  
+# Expresión para identificar los tokens
+patrones_token = [
+    (r'//.*', 'COMENTARIO'),
+    (r'\d+\.\d+(?:[eE][+-]?\d+)?', 'REAl'),
+    (r'\d+', 'ENTERO'),
+    (r'[a-zA-Z_][a-zA-Z0-9_]*', 'VARIABLE'),
+    (r'[=]', 'ASIGNACION'),
+    (r'[+]', 'SUMA'),
+    (r'[-]', 'RESTA'),
+    (r'[*]', 'MULTIPLICACION'),
+    (r'[/]', 'DIVISION'),
+    (r'[\^]', 'POTENCIA'),
+    (r'\(', 'PARENTESIS_IZQUIERDO'),
+    (r'\)', 'PARENTESIS_DERECHO'),
+    (r'\s+', None),
 ]
 
-# Funcion para tokenizar la entrada
-def tokenize(code):
+# Función para tokenizar la entrada
+def tokenizar(codigo):
     tokens = []
-    while code:
-        match = None
-        for pattern, token_type in token_patterns:
-            regex = re.compile(pattern)
-            match = regex.match(code)
-            if match:
-                value = match.group(0)
-                if token_type:
-                    tokens.append(Token(token_type, value))
+    while codigo:
+        coincidencia = None
+        for patron, tipo_token in patrones_token:
+            regex = re.compile(patron)
+            coincidencia = regex.match(codigo)
+            if coincidencia:
+                valor = coincidencia.group(0)
+                if tipo_token:
+                    tokens.append(Token(tipo_token, valor))
                 break
-        if not match:
-            raise ValueError(f"Token no reconocido: {code}")
-        code = code[len(match.group(0)):]
+        if not coincidencia:
+            raise ValueError(f"Token no reconocido: {codigo}")
+        codigo = codigo[len(coincidencia.group(0)):]
     return tokens
 
-# leer el archivo de texto
-def read_file(file_path):
-    with open(file_path, 'r') as file:
-        return file.read()
+# Leer el archivo de texto
+def leer_archivo(ruta_archivo):
+    with open(ruta_archivo, 'r') as archivo:
+        return archivo.read()
 
 # Leer expresiones desde un archivo de texto
-file_path = 'expresiones.txt'  
-input_code = read_file(file_path)
+ruta_archivo = 'expresiones.txt'
+codigo_entrada = leer_archivo(ruta_archivo)
 
-tokens = tokenize(input_code)
+tokens = tokenizar(codigo_entrada)
 
 # Imprimir los tokens encontrados
 print("Tokens encontrados:")
 for token in tokens:
-    print(f"Token: {token.value}  \t Tipo: {token.type}")
+    print(f"Token: {token.valor}  \t Tipo: {token.tipo}")
