@@ -26,7 +26,7 @@ Si el sistema muestra una versión de Python 3, está listo para ejecutar el pro
 Para ejecutar el programa, siga estos pasos:
 
 1. Asegúrese de tener el archivo `expresiones.txt` con el contenido que desea tokenizar.
-2. Coloque el archivo `tokenizador.py` y `expresiones.txt` en la misma carpeta.
+2. Asegúrese de que el archivo `automata.py` y `expresiones.txt` esten en la misma carpeta.
 3. Abra una terminal o línea de comandos en esa carpeta.
 4. Ejecute el siguiente comando para correr el programa:
 
