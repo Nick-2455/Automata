@@ -57,7 +57,7 @@ El autómata para este problema es un autómata de tipo **determinista** que rec
 
 #### Diagrama del autómata:
 
-(aqui va la imgaen del diagrama) 
+![image](https://github.com/user-attachments/assets/67ff9013-4bcf-45f6-93db-9ce3d28c2ffb)
 
 1. El autómata comienza en un estado inicial.
 2. Luego, lee el siguiente símbolo de la entrada.
