@@ -1,7 +1,3 @@
-# Falta que detecte 6.1E-8 y -8.6
-# Para correrlo YO tengo que hacerlo desde terminal con python3 /Users/nicolasperalta/Documents/TEC/IV\ SEMESTRE/MetodosComputacionales/Automata-1/automata.py
-
-
 import re
 from collections import namedtuple
 
@@ -11,7 +7,7 @@ Token = namedtuple('Token', ['type', 'value'])
 # Expresion para identificar los tokens
 token_patterns = [
     (r'//.*', 'COMENTARIO'), 
-    (r'\d+\.\d+', 'REAL'), 
+    (r'\d+\.\d+(?:[eE][+-]?\d+)?', 'Real'),
     (r'\d+', 'ENTERO'), 
     (r'[a-zA-Z_][a-zA-Z0-9_]*', 'VARIABLE'),  
     (r'[=]', 'ASIGNACION'),  
@@ -57,4 +53,4 @@ tokens = tokenize(input_code)
 # Imprimir los tokens encontrados
 print("Tokens encontrados:")
 for token in tokens:
-    print(f"Token: {token.value}  Tipo: {token.type}")
+    print(f"Token: {token.value}  \t Tipo: {token.type}")
