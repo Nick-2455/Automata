@@ -1,10 +1,17 @@
 Instituto Tecnológico y de Estudios Superiores de Monterrey: Campus Sonora Norte
+
 Actividad 3.2: Programando un DFA
+
 UF: Implementación de métodos computacionales
+
 Profesor: Baldomero Olvera Villanueva
+
 Grupo: 601
+
 Alumnos:
+
 Nicolas Pacheco Peralta - A01255150
+
 Jesús Felipe Bastidas Valenzuela - A01255206
 
 
