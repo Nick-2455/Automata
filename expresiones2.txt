@@ -1,0 +1,2 @@
+m = 89 / (7.2 + n) * 3.1E-4
+p = m ^ n // Calculo de potencia

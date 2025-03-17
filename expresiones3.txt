@@ -1,0 +1,2 @@
+c = 45.7 * (-5.8 - d) / 9.8E-3
+e = c ^ d // Elevacion a la potencia

@@ -1,0 +1,2 @@
+g = 12.6 * (3.9 - h) / 4.7E-5
+k = g ^ h // Resultado final

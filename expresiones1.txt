@@ -1,0 +1,2 @@
+x = 15.2 * (4.3 - y) / 2.5E-6
+z = x ^ y // Operacion exponencial
