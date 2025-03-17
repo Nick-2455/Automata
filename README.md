@@ -1,16 +1,25 @@
+Instituto Tecnológico y de Estudios Superiores de Monterrey: Campus Sonora Norte
+Actividad 3.2: Programando un DFA
+UF: Implementación de métodos computacionales
+Profesor: Baldomero Olvera Villanueva
+Grupo: 601
+Alumnos:
 Nicolas Pacheco Peralta - A01255150
-Felipe Bastidas - A0125
+Jesús Felipe Bastidas Valenzuela - A01255206
 
-### **1. Descripción del programa**
+
+### **Manual de usuario**
+
+#### **1. Descripción del programa**
 
 Este programa está diseñado para tokenizar expresiones matemáticas y de programación, identificando y clasificando los diferentes componentes como números enteros, números reales, variables, operadores, paréntesis, y comentarios. El programa está escrito en **Python** y utiliza expresiones regulares para identificar los distintos tipos de tokens en el código de entrada.
 ![image](https://github.com/user-attachments/assets/16703efa-bc81-4734-941a-3992343a4ea0)
 
-### **2. Lenguaje de programación utilizado**
+#### **2. Lenguaje de programación utilizado**
 
 Este programa está desarrollado en el lenguaje de **Python**.
 
-### **3. Requisitos previos**
+#### **3. Requisitos previos**
 
 Antes de ejecutar el programa, debe tener instalada la versión de Python 3 en su sistema. Puede descargar e instalar Python desde el siguiente enlace oficial:  
 [Python Oficial](https://www.python.org/downloads/)
@@ -19,12 +28,12 @@ Además, el programa utiliza la biblioteca estándar de Python `re` (expresiones
 
 Si el sistema muestra una versión de Python 3, está listo para ejecutar el programa.
 
-### **4. Archivos necesarios**
+#### **4. Archivos necesarios**
 
 - **Archivo de código fuente:** `automata.py` (Este es el archivo que contiene el programa en Python).
 - **Archivo de entrada:** El usuario introduce el nombre del archivo a analizar, ejemplo: `expresiones.txt` (Este archivo contiene el código o las expresiones a analizar).
 
-### **5. Cómo ejecutar el programa**
+#### **5. Cómo ejecutar el programa**
 
 Para ejecutar el programa, siga estos pasos:
 
@@ -37,11 +46,11 @@ Para ejecutar el programa, siga estos pasos:
 python automata.py
 ```
 
-### **6. Qué esperar como salida**
+#### **6. Qué esperar como salida**
 
 Cuando ejecute el programa, el script leerá el archivo `expresiones.txt`, procesará su contenido y generará una lista de tokens encontrados. Los tokens se mostrarán en la terminal o línea de comandos, con su valor y tipo. 
 
-#### Ejemplo de salida:
+##### Ejemplo de salida:
 ```plaintext
 Tokens encontrados:
 Token: 10  Tipo: ENTERO
@@ -54,11 +63,11 @@ Token: )  Tipo: PARENTESIS_DERECHO
 Token: // Comentario de ejemplo  Tipo: COMENTARIO
 ```
 
-### **7. Descripción del autómata**
+#### **7. Descripción del autómata**
 
 El autómata para este problema es un autómata de tipo **determinista** que recorre el código de entrada de izquierda a derecha, reconociendo patrones específicos definidos por las expresiones regulares.
 
-#### Diagrama del autómata:
+##### Diagrama del autómata:
 
 ![image](https://github.com/user-attachments/assets/67ff9013-4bcf-45f6-93db-9ce3d28c2ffb)
 
@@ -75,23 +84,23 @@ El autómata sigue estas reglas hasta que toda la entrada ha sido procesada, y l
 
 
 
-### **8. Conclusion**
+#### **8. Conclusion**
 
 Este programa le permitirá tokenizar expresiones matemáticas o de programación de manera eficiente y ordenada. A través de su ejecución, podrá descomponer el código de entrada en sus componentes básicos (tokens), lo que es útil para el análisis de expresiones en un lenguaje específico.
 
-### **9. Casos de Pruebas**
+#### **9. Casos de Pruebas**
 
 Los casos de pruebas tiene la función de verificar que el programa cumpla con las salidas que debe de dar, es una forma que tenemos como desarrolladores para poder autentificar que este todo en orden.
 
-#### **Caso de prueba base**
+##### **Caso de prueba base**
 
-El caso de prueba base es aquel que es dado en el ejemplo de la plataforma, al cual se le asigna el nombre de 'expresiones.txt', el cual contiene lo siguiente:
+El caso de prueba base es aquel que es dado en el ejemplo de la plataforma, al cual se le asigna el nombre de `expresiones.txt`, el cual contiene lo siguiente:
 ```plaintext
 b=7
 a = 32.4 *(-8.6 - b)/ 6.1E-8
 d = a ^ b // Esto es un comentario
 ```
-El python de 'automata.py' debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo 'expresiones.txt':
+El python de `automata.py` debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo `expresiones.txt`:
 
 ```plaintext
 Inserte el nombre del archivo a analizar (tiene que agregar la terminacion del documento, ejemplo: expresiones.txt) :expresiones.txt
@@ -122,14 +131,14 @@ Token: b  Tipo: VARIABLE
 Token: // Esto es un comentario  Tipo: COMENTARIO
 ```
 
-#### **Primer Caso de pruebas**
+##### **Primer Caso de pruebas**
 
-Al primer caso de pruebas se le asigna el nombre de 'expresiones1.txt', el cual contiene lo siguiente:
+Al primer caso de pruebas se le asigna el nombre de `expresiones1.txt`, el cual contiene lo siguiente:
 ```plaintext
 x = 15.2 * (4.3 - y) / 2.5E-6
 z = x ^ y // Operacion exponencial
 ```
-El python de 'automata.py' debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo 'expresiones1.txt':
+El python de `automata.py` debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo `expresiones1.txt`:
 
 ```plaintext
 Inserte el nombre del archivo a analizar (tiene que agregar la terminacion del documento, ejemplo: expresiones.txt) :expresiones1.txt
@@ -158,14 +167,14 @@ Token: // Operacion exponencial  Tipo: COMENTARIO
 ```
 
 
-#### **Segundo caso de pruebas**
+##### **Segundo caso de pruebas**
 
-Al segundo caso de pruebas se le asigna el nombre de 'expresiones2.txt', el cual contiene lo siguiente:
+Al segundo caso de pruebas se le asigna el nombre de `expresiones2.txt`, el cual contiene lo siguiente:
 ```plaintext
 m = 89 / (7.2 + n) * 3.1E-4
 p = m ^ n // Calculo de potencia
 ```
-El python de 'automata.py' debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo 'expresiones2.txt':
+El python de `automata.py` debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo `expresiones2.txt`:
 
 ```plaintext
 Inserte el nombre del archivo a analizar (tiene que agregar la terminacion del documento, ejemplo: expresiones.txt) :expresiones2.txt
@@ -194,13 +203,13 @@ Token: // Calculo de potencia  Tipo: COMENTARIO
 ```
 
 
-#### **Tercer caso de pruebas**
-Al tercer caso de pruebas se le asigna el nombre de 'expresiones3.txt', el cual contiene lo siguiente:
+##### **Tercer caso de pruebas**
+Al tercer caso de pruebas se le asigna el nombre de `expresiones3.txt`, el cual contiene lo siguiente:
 ```plaintext
 c = 45.7 * (-5.8 - d) / 9.8E-3
 e = c ^ d // Elevacion a la potencia
 ```
-El python de 'automata.py' debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo 'expresiones3.txt':
+El python de `automata.py` debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo `expresiones3.txt`:
 
 ```plaintext
 Inserte el nombre del archivo a analizar (tiene que agregar la terminacion del documento, ejemplo: expresiones.txt) :expresiones3.txt
@@ -229,14 +238,14 @@ Token: // Elevacion a la potencia  Tipo: COMENTARIO
 ```
 
 
-#### **Cuarto caso de pruebas**
+##### **Cuarto caso de pruebas**
 
-Al cuarto caso de pruebas se le asigna el nombre de 'expresiones4.txt', el cual contiene lo siguiente:
+Al cuarto caso de pruebas se le asigna el nombre de `expresiones4.txt`, el cual contiene lo siguiente:
 ```plaintext
 g = 12.6 * (3.9 - h) / 4.7E-5
 k = g ^ h // Resultado final
 ```
-El python de 'automata.py' debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo 'expresiones4.txt':
+El python de `automata.py` debe de recibir la entrada del archivo a analizar, en este caso se insetara el nombre del archivo `expresiones4.txt`:
 
 ```plaintext
 Inserte el nombre del archivo a analizar (tiene que agregar la terminacion del documento, ejemplo: expresiones.txt) :expresiones4.txt
