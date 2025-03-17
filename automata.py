@@ -1,7 +1,6 @@
-# Falta que detecte 6.1E-8 y -8.6
 # Para correrlo YO tengo que hacerlo desde terminal con python3 /Users/nicolasperalta/Documents/TEC/IV\ SEMESTRE/MetodosComputacionales/Automata-1/automata.py
 
-
+import os
 import re
 from collections import namedtuple
 
@@ -20,8 +19,8 @@ token_patterns = [
     (r'[*]', 'MULTIPLICACION'),  
     (r'[/]', 'DIVISION'),  
     (r'[\^]', 'POTENCIA'),  
-    (r'\(', 'PARENTHESIS QUE ABRE'),  
-    (r'\)', 'PARENTHESIS QUE CIERRA'), 
+    (r'\(', 'PARENTESIS QUE ABRE'),  
+    (r'\)', 'PARENTESIS QUE CIERRA'), 
     (r'\s+', None),  
 ]
 
@@ -49,7 +48,14 @@ def read_file(file_path):
         return file.read()
 
 # Leer expresiones desde un archivo de texto
-file_path = 'expresiones.txt'  
+file_path = input("Inserte el nombre del archivo a analizar (tiene que agregar la terminacion del documento, ejemplo: expresiones.txt) :")
+
+while (os.path.exists(file_path) != True):
+    print("\nArchivo no existe. Inserte el nombre de un archivo valido")
+    file_path = input("\nInserte el nombre del archivo a analizar (tiene que agregar la terminacion del documento, ejemplo: expresiones.txt) :")
+
+
+
 input_code = read_file(file_path)
 
 tokens = tokenize(input_code)
