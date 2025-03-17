@@ -1,5 +1,5 @@
 Nicolas Pacheco Peralta - A01255150
-Felibe Bastidas - A0125
+Felipe Bastidas - A0125
 
 ### **1. Descripción del programa**
 
