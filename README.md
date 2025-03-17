@@ -19,7 +19,7 @@ Si el sistema muestra una versión de Python 3, está listo para ejecutar el pro
 ### **4. Archivos necesarios**
 
 - **Archivo de código fuente:** `automata.py` (Este es el archivo que contiene el programa en Python).
-- **Archivo de entrada:** `expresiones.txt` (Este archivo contiene el código o las expresiones a analizar).
+- **Archivo de entrada:** El usuario introduce el nombre del archivo a analizar, ejemplo: `expresiones.txt` (Este archivo contiene el código o las expresiones a analizar).
 
 ### **5. Cómo ejecutar el programa**
 
