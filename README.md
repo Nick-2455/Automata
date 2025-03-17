@@ -1,3 +1,6 @@
+Nicolas Pacheco Peralta - A01255150
+Felibe Bastidas - A0125
+
 ### **1. Descripción del programa**
 
 Este programa está diseñado para tokenizar expresiones matemáticas y de programación, identificando y clasificando los diferentes componentes como números enteros, números reales, variables, operadores, paréntesis, y comentarios. El programa está escrito en **Python** y utiliza expresiones regulares para identificar los distintos tipos de tokens en el código de entrada.
@@ -31,7 +34,7 @@ Para ejecutar el programa, siga estos pasos:
 4. Ejecute el siguiente comando para correr el programa:
 
 ```bash
-python tokenizador.py
+python automata.py
 ```
 
 ### **6. Qué esperar como salida**
