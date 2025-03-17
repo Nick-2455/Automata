@@ -1,3 +1,10 @@
+# Implementación de métodos computacionales
+# Actividad 3.2: Programando un DFA
+# Nicolas Pacheco Peralta A01255150
+# Jesús Felipe Bastidas Valenzuela A01255206
+# Fecha de creacion: 14 de marzo de 2025
+# Fecha de modificacion: 16 de marzo de 2025
+
 import os
 import re
 from collections import namedtuple
