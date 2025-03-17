@@ -1,5 +1,3 @@
-# Para correrlo YO tengo que hacerlo desde terminal con python3 /Users/nicolasperalta/Documents/TEC/IV\ SEMESTRE/MetodosComputacionales/Automata-1/automata.py
-
 import os
 import re
 from collections import namedtuple
